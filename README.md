@@ -8,6 +8,10 @@ dependencies.
 All supplied data is fictional. This is an engineering example, not a customer
 result, a live connector, or evidence of time saved or business improvement.
 
+[View the synthetic report](https://wtfashwin.github.io/Portfolio/reporting-example/)
+or [inspect its calculation receipt](https://wtfashwin.github.io/Portfolio/reporting-example/receipt.json).
+The published example uses the supplied fixtures; it does not accept uploads.
+
 ## Run the example
 
 From this directory, run the following command. `output-valid` must not already
