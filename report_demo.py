@@ -137,7 +137,7 @@ def render(receipt):
                       f"{period['rows']} joined rows.</li>" for name, period in receipt["periods"].items())
     campaigns = ", ".join(safe(value) for value in receipt["campaigns"])
     return f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="data:,">
 <title>Synthetic demonstration — campaign report</title><style>
 body{{font:16px/1.6 system-ui,sans-serif;color:#17212b;background:#f3f5f7;margin:0}}
 main{{max-width:960px;margin:auto;padding:28px}}section,header{{background:white;padding:24px;margin-bottom:18px;border:1px solid #ccd3da;border-radius:8px}}
@@ -157,7 +157,7 @@ th,td{{padding:10px;text-align:right;border-bottom:1px solid #ccd3da}}th:first-c
 <p>Leads are additive source-reported counts, not unique customers or cross-platform attribution. No inferred or missing values are filled. Ratios and changes are rounded to two decimal places using half-up rounding; JSON preserves exact spend totals as decimal strings.</p></section>
 <section><h2>Sources and validation</h2><p><strong>Validation passed.</strong> Both files have unique, identical date/campaign keys. Every campaign includes every day in both periods.</p><ul>{sources}</ul>
 <p>Limits: UTF-8 CSV; exact headers and cell counts; at most 2 MiB and 10,000 data rows per file; nonnegative integer counts; nonnegative USD amounts with at most two decimal places; valid nonoverlapping inclusive periods. No network calls or external assets.</p>
-<p>This validates the file contract, not the truth, attribution, or accounting accuracy of source data. Open this file locally. Use your browser’s Print / Save as PDF for a printable copy; no separate PDF generator is included. See receipt.json for machine-readable calculations and source hashes.</p></section>
+<p>This validates the file contract, not the truth, attribution, or accounting accuracy of source data. Open this file locally. Use your browser’s Print / Save as PDF for a printable copy; no separate PDF generator is included. <a href="receipt.json">Inspect the calculation receipt and source hashes</a>.</p></section>
 </main></body></html>
 """
 
