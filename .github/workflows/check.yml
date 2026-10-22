@@ -1,0 +1,13 @@
+name: Check synthetic reporting proof
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test deterministic calculations and invalid inputs
+        run: python3 -m unittest -v
+      - name: Check Python syntax
+        run: python3 -m py_compile report_demo.py
